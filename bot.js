@@ -1,10 +1,5 @@
 const { Telegraf, Markup } = require('telegraf');
-const fs = require('fs');
-const { promisify } = require('util');
-
-// Перетворення функцій fs в асинхронні
-const readFileAsync = promisify(fs.readFile);
-const writeFileAsync = promisify(fs.writeFile);
+const fs = require('fs').promises;
 
 // Замість 'YOUR_BOT_TOKEN' вставте свій токен від BotFather
 const bot = new Telegraf('7216155455:AAEiQ_Lvu1Sw7LUSweKUdPNgbBswAqTZnGw');
@@ -12,7 +7,7 @@ const bot = new Telegraf('7216155455:AAEiQ_Lvu1Sw7LUSweKUdPNgbBswAqTZnGw');
 // Функція для читання даних з JSON-файлу
 async function readProducts() {
   try {
-    const data = await readFileAsync('products.json', 'utf8');
+    const data = await fs.readFile('products.json', 'utf8');
     return JSON.parse(data);
   } catch (error) {
     console.error('Помилка читання файлу:', error);
@@ -23,7 +18,7 @@ async function readProducts() {
 // Функція для запису даних у JSON-файл
 async function writeProducts(products) {
   try {
-    await writeFileAsync('products.json', JSON.stringify(products, null, 2));
+    await fs.writeFile('products.json', JSON.stringify(products, null, 2));
   } catch (error) {
     console.error('Помилка запису файлу:', error);
   }
@@ -110,7 +105,7 @@ bot.on('callback_query', async (ctx) => {
 });
 
 bot.launch();
-console.log('Бот запущений');
+console.log('Бот запущений!!!');
 
 // https://www.amevape.com/wp-content/uploads/2024/05/HM021-12.jpg
 // https://www.amevape.com/wp-content/uploads/2024/01/%E7%94%B5%E5%AD%90%E7%83%9F21.4psd-500x500.jpg
