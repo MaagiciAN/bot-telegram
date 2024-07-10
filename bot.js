@@ -107,7 +107,7 @@ bot.action('return_to_shop', async (ctx) => {
 });
 
 bot.launch();
-console.log('Бот запущений');
+console.log('Бот запущений!!');
 
 // https://www.amevape.com/wp-content/uploads/2024/05/HM021-12.jpg
 // https://www.amevape.com/wp-content/uploads/2024/01/%E7%94%B5%E5%AD%90%E7%83%9F21.4psd-500x500.jpg
