@@ -42,7 +42,7 @@ bot.command('shop', async (ctx) => {
     ctx.reply('Доступні товари:', Markup.inlineKeyboard(productButtons, { columns: 1 }).resize());
   } catch (error) {
     console.error('Помилка при завантаженні товарів:', error);
-    ctx.reply('Сталася помилка при завантаженні товарів. Спробуйте пізніше.');
+    ctx.reply('Сталася помилка. Спробуйте пізніше.');
   }
 });
 
