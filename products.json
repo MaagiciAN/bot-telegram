@@ -1,0 +1,38 @@
+[
+  {
+    "name": "HQD Cuvie Plus",
+    "stock": 100,
+    "image": "https://www.amevape.com/wp-content/uploads/2024/05/HM021-12.jpg",
+    "flavors": [
+      "Tobacco (Табак)",
+      "Strawberry Banana (Клубника Банан)",
+      "Strawberry Ice Cream (Клубничное Мороженое)",
+      "Black Russian (Черный Русский)"
+    ],
+    "price": 299
+  },
+  {
+    "name": "Elf Bar 1500",
+    "stock": 150,
+    "image": "https://www.amevape.com/wp-content/uploads/2024/01/%E7%94%B5%E5%AD%90%E7%83%9F21.4psd-500x500.jpg",
+    "flavors": [
+      "Tobacco (Табак)",
+      "Strawberry Banana (Клубника Банан)",
+      "Strawberry Ice Cream (Клубничное Мороженое)",
+      "Black Russian (Черный Русский)"
+    ],
+    "price": 299
+  },
+  {
+    "name": "HQD King",
+    "stock": 0,
+    "image": "https://example.com/images/hqd_king.jpg",
+    "flavors": [
+      "Tobacco (Табак)",
+      "Strawberry Banana (Клубника Банан)",
+      "Strawberry Ice Cream (Клубничное Мороженое)",
+      "Black Russian (Черный Русский)"
+    ],
+    "price": 299
+  }
+]
