@@ -1,5 +1,10 @@
 const { Telegraf, Markup } = require('telegraf');
-const fs = require('fs').promises;
+const fs = require('fs');
+const { promisify } = require('util');
+
+// Перетворення функцій fs в асинхронні
+const readFileAsync = promisify(fs.readFile);
+const writeFileAsync = promisify(fs.writeFile);
 
 // Замість 'YOUR_BOT_TOKEN' вставте свій токен від BotFather
 const bot = new Telegraf('7216155455:AAEiQ_Lvu1Sw7LUSweKUdPNgbBswAqTZnGw');
@@ -7,7 +12,7 @@ const bot = new Telegraf('7216155455:AAEiQ_Lvu1Sw7LUSweKUdPNgbBswAqTZnGw');
 // Функція для читання даних з JSON-файлу
 async function readProducts() {
   try {
-    const data = await fs.readFile('products.json', 'utf8');
+    const data = await readFileAsync('products.json', 'utf8');
     return JSON.parse(data);
   } catch (error) {
     console.error('Помилка читання файлу:', error);
@@ -18,7 +23,7 @@ async function readProducts() {
 // Функція для запису даних у JSON-файл
 async function writeProducts(products) {
   try {
-    await fs.writeFile('products.json', JSON.stringify(products, null, 2));
+    await writeFileAsync('products.json', JSON.stringify(products, null, 2));
   } catch (error) {
     console.error('Помилка запису файлу:', error);
   }
@@ -26,11 +31,11 @@ async function writeProducts(products) {
 
 // Встановити команду /shop у меню команд
 bot.telegram.setMyCommands([
-  { command: 'shop', description: 'Показати список товарів🛍' }
+  { command: 'shop', description: 'Показати список товарів' }
 ]);
 
 bot.start((ctx) => {
-  ctx.reply('Ласкаво просимо! Тут ви можете замовити свої електронні сигарети, а також насолодитися новими смаками😮‍💨');
+  ctx.reply('Ласкаво просимо! Тут ви можете замовити свої електронні сигарети, а також насолодитися новими смаками.');
 });
 
 bot.command('shop', async (ctx) => {
@@ -54,24 +59,24 @@ bot.command('shop', async (ctx) => {
         await ctx.replyWithPhoto(currentProduct.image, {
           caption: `Доступні смаки 👇🏻\n${currentProduct.name}\n${flavorList}`
         });
-        await ctx.reply(`Ціна - ${currentProduct.price} грн💵\n\nДля замовлення оптом пишіть менеджеру в телеграм @majorchamp1`);
-        await ctx.reply(`Ви обрали ${currentProduct.name}. Введіть кількість для замовлення🤔`);
+        await ctx.reply(`Ціна - ${currentProduct.price} грн\n\nДля замовлення оптом пишіть менеджеру в телеграм @majorchamp1`);
+        await ctx.reply(`Ви обрали ${currentProduct.name}. Введіть кількість для замовлення:`);
         
         bot.on('text', async (ctx) => {
           const quantity = parseInt(ctx.message.text);
           if (quantity > 0 && quantity <= currentProduct.stock) {
             await ctx.reply('Зв\'яжіться з менеджером для завершення замовлення або поверніться до вибору товару:', 
               Markup.inlineKeyboard([
-                Markup.button.url('Зв\'язатися з менеджером👤', 'https://t.me/majorchamp1'),
-                Markup.button.callback('Повернутись до вибору товару⬅️', 'return_to_shop')
+                Markup.button.url('Зв\'язатися з менеджером', 'https://t.me/majorchamp1'),
+                Markup.button.callback('Повернутись до вибору товару', 'return_to_shop')
               ], { columns: 1 }).resize()
             );
           } else {
-            await ctx.reply('Некоректна кількість або недостатньо товару на складі😒');
+            await ctx.reply('Некоректна кількість або недостатньо товару на складі.');
           }
         });
       } else {
-        await ctx.reply(`${currentProduct.name} наразі відсутній на складі❌`);
+        await ctx.reply(`${currentProduct.name} наразі відсутній на складі.`);
       }
     });
   });
@@ -99,7 +104,7 @@ bot.on('callback_query', async (ctx) => {
       await writeProducts(products);
       await ctx.reply(`Ви замовили ${quantity} ${currentProduct.name}. Залишилось на складі: ${currentProduct.stock}`);
     } else {
-      await ctx.reply('Некоректна кількість або недостатньо товару на складі😒');
+      await ctx.reply('Некоректна кількість або недостатньо товару на складі.');
     }
   }
 });
