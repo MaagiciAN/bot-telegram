@@ -15,15 +15,6 @@ async function readProducts() {
   }
 }
 
-// Функція для запису даних у JSON-файл
-async function writeProducts(products) {
-  try {
-    await fs.writeFile('products.json', JSON.stringify(products, null, 2));
-  } catch (error) {
-    console.error('Помилка при записі файлу:', error);
-  }
-}
-
 // Встановити команду /shop у меню команд
 bot.telegram.setMyCommands([
   { command: 'shop', description: 'Показати список товарів' }
@@ -63,14 +54,12 @@ bot.command('shop', async (ctx) => {
             await ctx.replyWithPhoto({ source: imagePath }, {
               caption: `Доступні смаки 👇🏻\n${currentProduct.name}\n${flavorList}`
             });
-            await ctx.reply(`Ціна - ${currentProduct.price} грн💵\n\nДля замовлення оптом пишіть менеджеру в телеграм @majorchamp1`);
+            await ctx.reply(`Ціна - ${currentProduct.price} грн 💵\n\nДля замовлення оптом пишіть менеджеру в телеграм @majorchamp1`);
             await ctx.reply(`Ви обрали ${currentProduct.name}. Введіть кількість для замовлення🤔:`);
             
             bot.on('text', async (ctx) => {
               const quantity = parseInt(ctx.message.text);
               if (quantity > 0 && quantity <= currentProduct.stock) {
-                currentProduct.stock -= quantity;
-                await writeProducts(products);
                 await ctx.reply('Зв\'яжіться з менеджером для завершення замовлення або поверніться до вибору товару:', 
                   Markup.inlineKeyboard([
                     Markup.button.url('Зв\'язатися з менеджером👤', 'https://t.me/majorchamp1'),
