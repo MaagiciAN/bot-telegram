@@ -1,7 +1,7 @@
 [
   {
     "name": "Elf Bar BC 18000",
-    "stock": 13,
+    "stock": 2,
     "image": "./img/Elfbar_BC18000_GrapeCranberry.jpg",
     "flavors": [
       "Blackberry Cherry (Ожина Вишня)🍒",
@@ -64,7 +64,7 @@
   {
     "name": "HQD King",
     "stock": 0,
-    "image": "https://example.com/images/hqd_king.jpg",
+    "image": "",
     "flavors": [
       "Tobacco (Табак)",
       "Strawberry Banana (Полуниця Банан)",
