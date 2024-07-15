@@ -29,7 +29,7 @@ bot.telegram.setMyCommands([
 ]);
 
 bot.start((ctx) => {
-  ctx.reply('Ласкаво просимо! Тут ви можете замовити свої електронні сигарети, а також насолодитися новими смаками.');
+  ctx.reply('Ласкаво просимо! Тут ви можете замовити свої електронні сигарети, а також насолодитися новими смаками😮‍💨🥳');
 });
 
 bot.command('shop', async (ctx) => {
@@ -39,7 +39,7 @@ bot.command('shop', async (ctx) => {
       Markup.button.callback(`${product.name} (${product.stock} в наявності)`, `buy_${product.name}`)
     );
     
-    ctx.reply('Доступні товари:', Markup.inlineKeyboard(productButtons, { columns: 1 }).resize());
+    ctx.reply('✅Доступні товари:', Markup.inlineKeyboard(productButtons, { columns: 1 }).resize());
   } catch (error) {
     console.error('Помилка при завантаженні товарів:', error);
     ctx.reply('Сталася помилка. Спробуйте пізніше.');
@@ -60,16 +60,16 @@ bot.command('shop', async (ctx) => {
             await ctx.replyWithPhoto(currentProduct.image, {
               caption: `Доступні смаки 👇🏻\n${currentProduct.name}\n${flavorList}`
             });
-            await ctx.reply(`Ціна - ${currentProduct.price} грн\n\nДля замовлення оптом пишіть менеджеру в телеграм @majorchamp1`);
-            await ctx.reply(`Ви обрали ${currentProduct.name}. Введіть кількість для замовлення:`);
+            await ctx.reply(`Ціна💵 - ${currentProduct.price} грн\n\nДля замовлення оптом пишіть менеджеру в телеграм @majorchamp1`);
+            await ctx.reply(`Ви обрали ${currentProduct.name}. 🤔Введіть кількість для замовлення:`);
             
             bot.on('text', async (ctx) => {
               const quantity = parseInt(ctx.message.text);
               if (quantity > 0 && quantity <= currentProduct.stock) {
                 await ctx.reply('Зв\'яжіться з менеджером для завершення замовлення або поверніться до вибору товару:', 
                   Markup.inlineKeyboard([
-                    Markup.button.url('Зв\'язатися з менеджером', 'https://t.me/majorchamp1'),
-                    Markup.button.callback('Повернутись до вибору товару', 'return_to_shop')
+                    Markup.button.url('Зв\'язатися з менеджером👤', 'https://t.me/majorchamp1'),
+                    Markup.button.callback('Повернутись до вибору товару⬅️', 'return_to_shop')
                   ], { columns: 1 }).resize()
                 );
               } else {

@@ -1,27 +1,65 @@
 [
   {
-    "name": "HQD Cuvie Plus",
-    "stock": 100,
-    "image": "https://www.amevape.com/wp-content/uploads/2024/05/HM021-12.jpg",
+    "name": "Elf Bar BC 18000",
+    "stock": 13,
+    "image": "./img/Elfbar_BC18000_GrapeCranberry.jpg",
     "flavors": [
-      "Tobacco (Табак)",
-      "Strawberry Banana (Клубника Банан)",
-      "Strawberry Ice Cream (Клубничное Мороженое)",
-      "Black Russian (Черный Русский)"
+      "Blackberry Cherry (Ожина Вишня)🍒",
+      "Grape Ice (Виноград Лід)🍇🧊",
+      "Grapefruit Passionfruit (Ананас Питахайя Грейпфрут)🍍",
+      "Watermelon Ice (Арбуз Лід)🍉🧊"
     ],
-    "price": 299
+    "price": 749
   },
   {
-    "name": "Elf Bar 1500",
-    "stock": 150,
-    "image": "https://www.amevape.com/wp-content/uploads/2024/01/%E7%94%B5%E5%AD%90%E7%83%9F21.4psd-500x500.jpg",
+    "name": "Rab Beats RC10000 Touch",
+    "stock": 17,
+    "image": "./img/RabBeats_RC10000_Touch.jpg",
     "flavors": [
-      "Tobacco (Табак)",
-      "Strawberry Banana (Клубника Банан)",
-      "Strawberry Ice Cream (Клубничное Мороженое)",
-      "Black Russian (Черный Русский)"
+      "Blue Razz Ice (Синя Малина Лід)🍓🫐🍹",
+      "Coconut Banana (Кокос Банан)🥥🍌",
+      "Dragon Strawnana (Клубника Банан Питахайя)🐲🍓🍌",
+      "OMG (Маракуйя Апельсин Манго Гуава) 🍈🥭  ",
+      "Watermelon Bubblegum (Кавун Жуйка)🍉🍡"
     ],
-    "price": 299
+    "price": 649
+  },
+  {
+    "name": "Vozol 10000",
+    "stock": 10,
+    "image": "./img/Vozol_1000.jpg",
+    "flavors": [
+      "Cotton Candy (Солодка Вата)🍭",
+      "Chocolate Cream (Фісташкове Морозиво)🍧",
+      "Apple Ice (Кисле Яблуко Лід)🍏🧊",
+      "Strawberry Ice Cream (Полуничне Морозиво)🍓🍨",
+      "Tangerine Mango Guava (Мандарин Манго Гуава)🍊🥭"
+    ],
+    "price": 599
+  },
+  {
+    "name": "Drag Bar F8000",
+    "stock": 7,
+    "image": "./img/Dragbar_.jpg",
+    "flavors": [
+      "Rainbow Bear (Веселкові Желейні Ведмедики)🌈🧸",
+      "Green Vodoo (Зелене Яблуко Малина Виноград М'ята)🍏🍇🌿",
+      "Blue Raspberry Lemon (Синя Малина Лимон)🍋"
+    ],
+    "price": 549
+  },
+  {
+    "name": "Elf Bar TE5000 5%",
+    "stock": 10,
+    "image": "./img/Elfbar_TE5000.jpg",
+    "flavors": [
+      "Blue Razz Ice (Синя Малина, Лід)🫐🧊",
+      "Strawberry Banana (Полуниця Банан)🍓🍌",
+      "Vanilla Ice Cream (Ванільне Морозиво)🍦",
+      "Juicy Peach (Соковитий Персик)🍑",
+      "Pineapple Mango Orange (Ананас Манго Апельсин)🍍🥭🍊"
+    ],
+    "price": 529
   },
   {
     "name": "HQD King",
@@ -29,9 +67,8 @@
     "image": "https://example.com/images/hqd_king.jpg",
     "flavors": [
       "Tobacco (Табак)",
-      "Strawberry Banana (Клубника Банан)",
-      "Strawberry Ice Cream (Клубничное Мороженое)",
-      "Black Russian (Черный Русский)"
+      "Strawberry Banana (Полуниця Банан)",
+      "Strawberry Ice Cream (Полуничне Морозиво)"
     ],
     "price": 299
   }
