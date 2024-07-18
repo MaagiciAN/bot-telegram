@@ -1,9 +1,10 @@
 const { Telegraf, Markup } = require('telegraf');
 const fs = require('fs').promises;
 const path = require('path');
+require('dotenv').config();
 
 // Вставте свій токен від BotFather
-const bot = new Telegraf('7216155455:AAEiQ_Lvu1Sw7LUSweKUdPNgbBswAqTZnGw');
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 // Функція для читання даних з JSON-файлу
 async function readProducts() {
