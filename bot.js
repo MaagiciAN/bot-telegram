@@ -90,7 +90,7 @@ bot.action('return_to_shop', async (ctx) => {
   try {
     const products = await readProducts();
     const productButtons = products.map(product => 
-      Markup.button.callback(`${product.name} (${product.stock} в наявності)`, `buy_${product.name}`)
+      Markup.button.callback(`${product.name}`, `buy_${product.name}`)
     );
     
     await ctx.reply('Доступні товари:', Markup.inlineKeyboard(productButtons, { columns: 1 }).resize());
