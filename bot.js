@@ -54,7 +54,7 @@ bot.command('shop', async (ctx) => {
             await ctx.replyWithPhoto({ source: imagePath }, {
               caption: `Доступні смаки 👇🏻\n${currentProduct.name}\n${flavorList}`
             });
-            await ctx.reply(`Ціна - ${currentProduct.price} грн 💵\n\nДля замовлення оптом пишіть менеджеру в телеграм @majorchamp1`);
+            await ctx.reply(`Ціна - ${currentProduct.price} грн 💵\n\nДля замовлення оптом пишіть менеджеру в телеграм @Manager_Poof331`);
             await ctx.reply(`Ви обрали ${currentProduct.name}. Введіть кількість для замовлення🤔:`);
             
             bot.on('text', async (ctx) => {
@@ -62,7 +62,7 @@ bot.command('shop', async (ctx) => {
               if (quantity > 0 && quantity <= currentProduct.stock) {
                 await ctx.reply('Зв\'яжіться з менеджером для завершення замовлення або поверніться до вибору товару:', 
                   Markup.inlineKeyboard([
-                    Markup.button.url('Зв\'язатися з менеджером👤', 'https://t.me/majorchamp1'),
+                    Markup.button.url('Зв\'язатися з менеджером👤', 'https://t.me/Manager_Poof331'),
                     Markup.button.callback('Повернутись до вибору товару⬅️', 'return_to_shop')
                   ], { columns: 1 }).resize()
                 );
