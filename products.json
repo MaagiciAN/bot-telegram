@@ -1,7 +1,7 @@
 [
   {
     "name": "Elf Bar BC 18000",
-    "stock": 13,
+    "stock": 1000,
     "image": "./img/Elfbar_BC18000_GrapeCranberry.jpg",
     "flavors": [
       "Blackberry Cherry (Ожина Вишня)🍒",
@@ -13,7 +13,7 @@
   },
   {
     "name": "Rab Beats RC10000 Touch",
-    "stock": 17,
+    "stock": 1000,
     "image": "./img/RabBeats_RC10000_Touch.jpg",
     "flavors": [
       "Blue Razz Ice (Синя Малина Лід)🍓🫐🍹",
@@ -26,7 +26,7 @@
   },
   {
     "name": "Vozol 10000",
-    "stock": 10,
+    "stock": 1000,
     "image": "./img/Vozol_1000.jpg",
     "flavors": [
       "Cotton Candy (Солодка Вата)🍭",
@@ -39,7 +39,7 @@
   },
   {
     "name": "Drag Bar F8000",
-    "stock": 7,
+    "stock": 1000,
     "image": "./img/Dragbar_.jpg",
     "flavors": [
       "Rainbow Bear (Веселкові Желейні Ведмедики)🌈🧸",
@@ -50,7 +50,7 @@
   },
   {
     "name": "Elf Bar TE5000 5%",
-    "stock": 10,
+    "stock": 1000,
     "image": "./img/Elfbar_TE5000.jpg",
     "flavors": [
       "Blue Razz Ice (Синя Малина, Лід)🫐🧊",

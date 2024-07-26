@@ -53,7 +53,7 @@ bot.command('shop', async (ctx) => {
             const imagePath = path.resolve(__dirname, currentProduct.image); // абсолютний шлях до зображення
             
             await ctx.replyWithPhoto({ source: imagePath }, {
-              caption: `Доступні смаки 👇🏻\n${currentProduct.name}\n${flavorList}`
+              caption: `${currentProduct.name}\nДоступні смаки 👇🏻\n${flavorList}`
             });
             await ctx.reply(`Ціна - ${currentProduct.price} грн 💵\n\nДля замовлення оптом пишіть менеджеру в телеграм @Manager_Poof331`);
             await ctx.reply(`Ви обрали ${currentProduct.name}. Введіть кількість для замовлення🤔:`);
